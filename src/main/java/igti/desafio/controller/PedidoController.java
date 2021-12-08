@@ -33,7 +33,7 @@ public class PedidoController {
 
 	@PostMapping("/pedidos")
 	public Order realizaPedido(@RequestBody PedidoDto pedido) {
-		var entidadePedido = new Order();
+		Order entidadePedido = new Order();
 		entidadePedido.setDataHour(LocalDateTime.now());
 		entidadePedido.setSituation(Order.SITUACAO_AGUARDANDO);
 		entidadePedido.setItens(pedido.getItens().stream()
